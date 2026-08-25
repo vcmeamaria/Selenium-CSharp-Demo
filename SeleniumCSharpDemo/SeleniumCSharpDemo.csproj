@@ -29,7 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Drivers\" />
     <Folder Include="TestData\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
