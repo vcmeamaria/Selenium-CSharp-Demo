@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using SeleniumCSharpDemo.Pages;
 
 namespace SeleniumCSharpDemo;
 
@@ -9,6 +10,7 @@ public class SauceDemoTests
 {
     private IWebDriver driver = null!;
     private WebDriverWait wait = null!;
+    private LoginPage loginPage = null!;
 
     [SetUp]
     public void Setup()
@@ -20,6 +22,8 @@ public class SauceDemoTests
             driver,
             TimeSpan.FromSeconds(10)
         );
+
+        loginPage = new LoginPage(driver);
     }
 
     [Test]
@@ -27,18 +31,10 @@ public class SauceDemoTests
     {
         driver.Navigate().GoToUrl("https://www.saucedemo.com");
 
-        IWebElement username =
-            wait.Until(d =>
-                d.FindElement(By.Id("user-name"))
-            );
-
-        username.SendKeys("standard_user");
-
-        driver.FindElement(By.Id("password"))
-            .SendKeys("secret_sauce");
-
-        driver.FindElement(By.Id("login-button"))
-            .Click();
+        loginPage.Login(
+            "standard_user",
+            "secret_sauce"
+        );
 
         IWebElement title =
             wait.Until(d =>
