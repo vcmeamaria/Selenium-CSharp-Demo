@@ -29,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Screenshots\" />
     <Folder Include="TestData\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
 
 </Project>

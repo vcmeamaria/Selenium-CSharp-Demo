@@ -31,3 +31,9 @@ TestResults/
 
 .DS_Store
 Thumbs.db
+
+# ==========================================
+# Selenium Screenshots
+# ==========================================
+
+/SeleniumCSharpDemo/Screenshots/*.png
