@@ -32,7 +32,6 @@
     <Folder Include="Drivers\" />
     <Folder Include="TestData\" />
     <Folder Include="Utilities\" />
-    <Folder Include="Tests\" />
   </ItemGroup>
 
 </Project>
